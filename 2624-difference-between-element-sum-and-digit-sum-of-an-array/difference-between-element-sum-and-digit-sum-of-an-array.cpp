@@ -2,17 +2,17 @@ class Solution {
 public:
     int differenceOfSum(vector<int>& nums) {
         int n=nums.size();
-        int sum=0, dig=0,r;
+        int sum=0, dig=0;
         
         for(int i=0; i<n; i++)
         {
-            sum=sum+nums[i];
-
-            while(nums[i]>0)
+            sum+=nums[i];
+            
+            int temp=nums[i];
+            while(temp>0)
             {
-                r=nums[i]%10;
-                nums[i]=nums[i]/10;
-                dig=dig+r;
+               dig+=temp%10;
+                temp/=10;
             }
         }
 
